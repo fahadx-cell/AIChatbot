@@ -15,7 +15,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 TELEGRAM_API = f"https://api.telegram.org/bot{BOT_TOKEN}"
 GEMINI_URL = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
-    "gemma-3-12b:generateContent?key=" + GEMINI_API_KEY
+    "gemini-2.5-flash:generateContent?key=" + GEMINI_API_KEY
 )
 
 app = FastAPI()
@@ -81,3 +81,4 @@ async def telegram_webhook(request: Request):
         send_message(chat_id, "❌ AI is busy. Try again later.")
 
     return {"ok": True}
+
